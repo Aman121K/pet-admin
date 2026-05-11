@@ -39,8 +39,46 @@ export function fetchSubscribers() {
   return authFetch('/api/admin/subscribers');
 }
 
+export function fetchDashboard() {
+  return authFetch('/api/admin/dashboard');
+}
+
+export function fetchUsers() {
+  return authFetch('/api/admin/users');
+}
+
+export function fetchUserDetails(id) {
+  return authFetch(`/api/admin/users/${id}`);
+}
+
+export function updateUserStatus(id, status) {
+  return authFetch(`/api/admin/users/${id}/status`, {
+    method: 'PATCH',
+    body: JSON.stringify({ status }),
+  });
+}
+
 export function fetchAdminProducts() {
   return authFetch('/api/admin/products');
+}
+
+export function fetchCategories() {
+  return authFetch('/api/admin/categories');
+}
+
+export function createCategory(body) {
+  return authFetch('/api/admin/categories', { method: 'POST', body: JSON.stringify(body) });
+}
+
+export function updateCategory(id, body) {
+  return authFetch(`/api/admin/categories/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(body),
+  });
+}
+
+export function deleteCategory(id) {
+  return authFetch(`/api/admin/categories/${id}`, { method: 'DELETE' });
 }
 
 export function createProduct(body) {
@@ -56,4 +94,57 @@ export function updateProduct(id, body) {
 
 export function deleteProduct(id) {
   return authFetch(`/api/admin/products/${id}`, { method: 'DELETE' });
+}
+
+export function fetchOrders() {
+  return authFetch('/api/admin/orders');
+}
+
+export function fetchOrderById(id) {
+  return authFetch(`/api/admin/orders/${id}`);
+}
+
+export function updateOrder(id, body) {
+  return authFetch(`/api/admin/orders/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify(body),
+  });
+}
+
+export function fetchDiscounts() {
+  return authFetch('/api/admin/discounts');
+}
+
+export function createDiscount(body) {
+  return authFetch('/api/admin/discounts', { method: 'POST', body: JSON.stringify(body) });
+}
+
+export function updateDiscount(id, body) {
+  return authFetch(`/api/admin/discounts/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(body),
+  });
+}
+
+export function deleteDiscount(id) {
+  return authFetch(`/api/admin/discounts/${id}`, { method: 'DELETE' });
+}
+
+export function fetchBanners() {
+  return authFetch('/api/admin/banners');
+}
+
+export function createBanner(body) {
+  return authFetch('/api/admin/banners', { method: 'POST', body: JSON.stringify(body) });
+}
+
+export function updateBanner(id, body) {
+  return authFetch(`/api/admin/banners/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(body),
+  });
+}
+
+export function deleteBanner(id) {
+  return authFetch(`/api/admin/banners/${id}`, { method: 'DELETE' });
 }
