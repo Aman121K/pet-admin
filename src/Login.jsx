@@ -16,11 +16,13 @@ export function Login() {
   const [checkingApi, setCheckingApi] = useState(false);
   const [apiPreview, setApiPreview] = useState(null);
 
-  function fillDemoCredentials() {
+  async function fillDemoCredentials() {
     setUsername(DEMO_ADMIN.username);
     setPassword(DEMO_ADMIN.password);
     setError('');
     setApiPreview(null);
+    setToken('demo-access');
+    navigate('/', { replace: true });
   }
 
   async function onSubmit(e) {
@@ -65,8 +67,13 @@ export function Login() {
           Dummy credentials: <span className="text-ink">{DEMO_ADMIN.username}</span> /{' '}
           <span className="text-ink">{DEMO_ADMIN.password}</span>
         </p>
-        <button type="button" onClick={fillDemoCredentials} className="admin-btn-secondary mt-3 h-10 w-full">
-          Use Dummy Credentials
+        <button
+          type="button"
+          onClick={fillDemoCredentials}
+          disabled={loading}
+          className="admin-btn-secondary mt-3 h-10 w-full disabled:opacity-60"
+        >
+          {loading ? 'Signing in…' : 'Use Dummy Credentials'}
         </button>
 
         <form onSubmit={onSubmit} className="mt-6 space-y-4">

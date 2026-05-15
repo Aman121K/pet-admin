@@ -32,6 +32,7 @@ const modules = [
   { name: 'Users', to: '/users', ops: ['Read', 'Update', 'Status control'], icon: 'M16 19a4 4 0 0 0-8 0M12 11a4 4 0 1 0 0-8' },
   { name: 'Orders', to: '/orders', ops: ['Read', 'Update', 'Lifecycle tracking'], icon: 'M4 7h16M6 11h12M8 15h8M9 4h6v3H9z' },
   { name: 'Subscribers', to: '/subscribers', ops: ['Read', 'Export-ready list'], icon: 'M4 6h16v12H4zM4 8l8 6 8-6' },
+  { name: 'Blogs', to: '/blogs', ops: ['Create', 'Read', 'Update', 'Delete', 'SEO'], icon: 'M6 4h12v16H6zM9 8h6M9 12h6M9 16h4' },
 ];
 
 export function Dashboard() {
@@ -71,6 +72,7 @@ export function Dashboard() {
         <Card title="Discount Codes" value={m.discounts ?? 0} icon="M7 7h.01M17 17h.01M5 19L19 5" />
         <Card title="Banners" value={m.banners ?? 0} icon="M4 5h16v10H4zM8 19h8" />
         <Card title="Subscribers" value={m.subscribers ?? 0} icon="M4 6h16v12H4zM4 8l8 6 8-6" />
+        <Card title="Blogs" value={m.blogs ?? 0} icon="M6 4h12v16H6zM9 8h6M9 12h6M9 16h4" />
       </div>
 
       <div className="admin-section-head">

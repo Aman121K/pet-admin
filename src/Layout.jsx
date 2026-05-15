@@ -17,6 +17,7 @@ const navItems = [
   { to: '/discounts', label: 'Discounts', icon: 'M7 7h.01M17 17h.01M5 19L19 5M4 10a3 3 0 1 0 6 0 3 3 0 0 0-6 0zM14 14a3 3 0 1 0 6 0 3 3 0 0 0-6 0z' },
   { to: '/banners', label: 'Banners', icon: 'M4 5h16v10H4zM8 19h8M10 15v4M14 15v4' },
   { to: '/subscribers', label: 'Subscribers', icon: 'M4 6h16v12H4zM4 8l8 6 8-6' },
+  { to: '/blogs', label: 'Blogs', icon: 'M6 4h12v16H6zM9 8h6M9 12h6M9 16h4' },
   { to: '/products', label: 'Products', icon: 'M5 7l7-4 7 4v10l-7 4-7-4zM5 7l7 4 7-4M12 11v10' },
 ];
 

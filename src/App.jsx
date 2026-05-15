@@ -1,8 +1,10 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { token as getToken } from './api.js';
 import { Banners } from './Banners.jsx';
+import { Blogs } from './Blogs.jsx';
 import { Categories } from './Categories.jsx';
 import { Dashboard } from './Dashboard.jsx';
+import { DemoAccess } from './DemoAccess.jsx';
 import { Discounts } from './Discounts.jsx';
 import { Layout } from './Layout.jsx';
 import { Login } from './Login.jsx';
@@ -20,6 +22,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
+      <Route path="/client-access" element={<DemoAccess />} />
       <Route
         path="/"
         element={
@@ -42,6 +45,9 @@ export default function App() {
         <Route path="banners/new" element={<Banners />} />
         <Route path="banners/:id/edit" element={<Banners />} />
         <Route path="subscribers" element={<Subscribers />} />
+        <Route path="blogs" element={<Blogs />} />
+        <Route path="blogs/new" element={<Blogs />} />
+        <Route path="blogs/:id/edit" element={<Blogs />} />
         <Route path="products" element={<Products />} />
         <Route path="products/new" element={<Products />} />
         <Route path="products/:id/edit" element={<Products />} />

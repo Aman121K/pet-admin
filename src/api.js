@@ -158,3 +158,22 @@ export function updateBanner(id, body) {
 export function deleteBanner(id) {
   return authFetch(`/api/admin/banners/${id}`, { method: 'DELETE' });
 }
+
+export function fetchBlogs() {
+  return authFetch('/api/admin/blogs');
+}
+
+export function createBlog(body) {
+  return authFetch('/api/admin/blogs', { method: 'POST', body: JSON.stringify(body) });
+}
+
+export function updateBlog(id, body) {
+  return authFetch(`/api/admin/blogs/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(body),
+  });
+}
+
+export function deleteBlog(id) {
+  return authFetch(`/api/admin/blogs/${id}`, { method: 'DELETE' });
+}
