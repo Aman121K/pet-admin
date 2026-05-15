@@ -121,6 +121,32 @@ export function updateOrder(id, body) {
   });
 }
 
+export function createOrder(body) {
+  return authFetch('/api/admin/orders', {
+    method: 'POST',
+    body: JSON.stringify(body),
+  });
+}
+
+export function deleteOrder(id) {
+  return authFetch(`/api/admin/orders/${id}`, { method: 'DELETE' });
+}
+
+export function fetchPages() {
+  return authFetch('/api/admin/pages');
+}
+
+export function fetchPageByName(name) {
+  return authFetch(`/api/admin/pages/${encodeURIComponent(name)}`);
+}
+
+export function updatePageByName(name, body) {
+  return authFetch(`/api/admin/pages/${encodeURIComponent(name)}`, {
+    method: 'PUT',
+    body: JSON.stringify(body),
+  });
+}
+
 export function fetchDiscounts() {
   return authFetch('/api/admin/discounts');
 }

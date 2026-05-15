@@ -9,6 +9,7 @@ import { Discounts } from './Discounts.jsx';
 import { Layout } from './Layout.jsx';
 import { Login } from './Login.jsx';
 import { Orders } from './Orders.jsx';
+import { Pages } from './Pages.jsx';
 import { Products } from './Products.jsx';
 import { Subscribers } from './Subscribers.jsx';
 import { Users } from './Users.jsx';
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="users" element={<Users />} />
         <Route path="orders" element={<Orders />} />
+        <Route path="pages" element={<Pages />} />
         <Route path="categories" element={<Categories />} />
         <Route path="categories/new" element={<Categories />} />
         <Route path="categories/:id/edit" element={<Categories />} />

@@ -13,6 +13,7 @@ const navItems = [
   { to: '/dashboard', label: 'Dashboard', icon: 'M3 12l9-9 9 9M5 10v10h14V10' },
   { to: '/users', label: 'Users', icon: 'M16 19a4 4 0 0 0-8 0M12 11a4 4 0 1 0 0-8' },
   { to: '/orders', label: 'Orders', icon: 'M4 7h16M6 11h12M8 15h8M9 4h6v3H9z' },
+  { to: '/pages', label: 'Pages', icon: 'M6 4h12v16H6zM9 8h6M9 12h6M9 16h6' },
   { to: '/categories', label: 'Categories', icon: 'M4 6h7v7H4zM13 6h7v7h-7zM4 15h7v5H4zM13 15h7v5h-7z' },
   { to: '/discounts', label: 'Discounts', icon: 'M7 7h.01M17 17h.01M5 19L19 5M4 10a3 3 0 1 0 6 0 3 3 0 0 0-6 0zM14 14a3 3 0 1 0 6 0 3 3 0 0 0-6 0z' },
   { to: '/banners', label: 'Banners', icon: 'M4 5h16v10H4zM8 19h8M10 15v4M14 15v4' },
