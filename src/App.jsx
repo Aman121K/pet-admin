@@ -3,6 +3,7 @@ import { token as getToken } from './api.js';
 import { Banners } from './Banners.jsx';
 import { Blogs } from './Blogs.jsx';
 import { Categories } from './Categories.jsx';
+import { CreateOrder } from './CreateOrder.jsx';
 import { Dashboard } from './Dashboard.jsx';
 import { DemoAccess } from './DemoAccess.jsx';
 import { Discounts } from './Discounts.jsx';
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="users" element={<Users />} />
         <Route path="orders" element={<Orders />} />
+        <Route path="orders/new" element={<CreateOrder />} />
         <Route path="pages" element={<Pages />} />
         <Route path="categories" element={<Categories />} />
         <Route path="categories/new" element={<Categories />} />
