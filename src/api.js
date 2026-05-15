@@ -22,7 +22,8 @@ export async function login(username, password) {
 
 async function authFetch(path, options = {}) {
   const headers = { ...(options.headers || {}), Authorization: `Bearer ${token()}` };
-  if (options.body && !headers['Content-Type']) {
+  const isFormData = typeof FormData !== 'undefined' && options.body instanceof FormData;
+  if (options.body && !isFormData && !headers['Content-Type']) {
     headers['Content-Type'] = 'application/json';
   }
   const res = await fetch(`${API}${path}`, { ...options, headers });
@@ -33,6 +34,15 @@ async function authFetch(path, options = {}) {
   }
   if (!res.ok) throw new Error(data.error || 'Request failed');
   return data;
+}
+
+export function uploadProductImages(files) {
+  const formData = new FormData();
+  files.forEach((file) => formData.append('images', file));
+  return authFetch('/api/admin/uploads/products', {
+    method: 'POST',
+    body: formData,
+  });
 }
 
 export function fetchSubscribers() {

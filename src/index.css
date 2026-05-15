@@ -12,6 +12,18 @@
 }
 
 @layer components {
+  .p-editor-container .p-editor-toolbar {
+    @apply rounded-t-lg border-line;
+  }
+
+  .p-editor-container .p-editor-content {
+    @apply rounded-b-lg border-line bg-white;
+  }
+
+  .p-editor-container .ql-editor {
+    @apply text-[14px] text-ink;
+  }
+
   .admin-page {
     @apply space-y-2 animate-[fadeIn_.2s_ease-out];
   }
