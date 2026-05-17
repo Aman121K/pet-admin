@@ -1,4 +1,10 @@
-const API = import.meta.env.VITE_API_URL || '';
+const RAW_API = import.meta.env.VITE_API_URL || 'https://dev.petsquare.co.nz/api/health';
+const API = RAW_API.replace(/\/+$/, '').replace(/\/health$/, '');
+
+function apiUrl(path) {
+  const cleanPath = path.startsWith('/api/') && API.endsWith('/api') ? path.slice(4) : path;
+  return `${API}${cleanPath}`;
+}
 
 export function token() {
   return localStorage.getItem('pet-admin-token') || '';
@@ -10,7 +16,7 @@ export function setToken(t) {
 }
 
 export async function login(username, password) {
-  const res = await fetch(`${API}/api/admin/login`, {
+  const res = await fetch(apiUrl('/api/admin/login'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password }),
@@ -26,7 +32,7 @@ async function authFetch(path, options = {}) {
   if (options.body && !isFormData && !headers['Content-Type']) {
     headers['Content-Type'] = 'application/json';
   }
-  const res = await fetch(`${API}${path}`, { ...options, headers });
+  const res = await fetch(apiUrl(path), { ...options, headers });
   const data = await res.json().catch(() => ({}));
   if (res.status === 401) {
     setToken('');
